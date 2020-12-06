@@ -49,71 +49,45 @@ public class Classroom {
         return id + "-" + term;
     }
 
-    public void addStudent(Student newStudent){
-        /*ArrayList<Student> list = new ArrayList<Student>(Arrays.asList(participants));
-        list.add(newStudent);
-        participants = list.toArray(participants);*/
-        /*for (Student student : participants){
-            if (student.getID() == newStudent.getID()){
-            }
-        }
-        int index = 0;
-        if(index < 4){    
-            participants[index++] = newStudent;
-        }*/
-        /*int index = 0;
-        if(index < 4) { 
-            //Student student = new Student();
-            participants[index] = newStudent;
-            index++;
-        }*/
-        participants = new Student[4];
+    public void addStudent(Student student)
+    {
         
-        for (int i = 0; i < 4; i++){
+        for(int i=0; i<participants.length;i++){
             
-            participants[i] = newStudent;
-        }
+            if(participants[i]== null ){
+                participants[i]= student;
+                i = participants.length;
+            }
+            }
+        
+    
     }
 
-    public String getParticipantsEmail(){
-        /*String email = "";
-        for(int i = 0; i < participants.length; i++){
-            if(i == (participants.length-1)){
-                email = email.concat(participants[i].getID()).concat("@student.hsrw");
-            }
-            else{
-                email = email.concat(participants[i].getID()).concat("@student.hsrw, ");
-            }                                           
-        }
-
-        return email;*/
-        /*ArrayList<Student> list = new ArrayList<Student>(Arrays.asList(participants));
-        String emails = "";
-        for (int i=0; i < list.size();i++){
-            emails = emails + list.get(i).getFQUN() + ", ";
-        }
-        return emails.substring(0, emails.length() - 2);*/
-        String str = "";
+    public String getParticipantsEmail()
+    {
+      String str= "";
+      String hsrw= "@student.hsrw, ";
+      String hsrwend= "@student.hsrw";
            
-        for(int i=0; i<participants.length; i++){
-            if(i == (participants.length-1)){
-                str += (participants[i].getID() + "@student.hsrw");
-            }
-
-            else if (i == (participants.length-1)){
-
-            str += "";
+        int k=0;
+        for(int z=0; z<participants.length; z++){
+                 if(participants[z]!=null) k++;
 
         }
-                                         
-          else{
-
-          str +=( participants[i].getID() + "@student.hsrw, ");
-
+        for(int i=0; i<k; i++){
+         if(i==k-1){
+            
+          str= str.concat(participants[i].getID()).concat(hsrwend);
+                                         }
+      else
+      {
+          str= str.concat(participants[i].getID()).concat(hsrw);
           }
                
-        }
-        return str;
+                                                     }
+      return str;
+                              
+
     }
     
     public int getTotalPaticipants(){
