@@ -6,7 +6,9 @@ public class Classroom {
     private String room;
     private String term;
 
-    private Classroom(){}
+    private Classroom(){
+        int index = 0;
+    }
     public Classroom(Course newCourse, String theRoom){
         course = newCourse;
         room = theRoom;
@@ -50,7 +52,6 @@ public class Classroom {
     }
 
     public void addStudent (Student student){
-        int index = -1;
         participants = new Student[5];
         this.index++;
         this.participants[index] = student;
