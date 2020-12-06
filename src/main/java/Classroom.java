@@ -51,7 +51,7 @@ public class Classroom {
 
     public void addStudent (Student student){
         int i = -1;
-        participants = new Student[5]
+        participants = new Student[5];
         this.i++;
         this.participants[this.i] = student;
     }
