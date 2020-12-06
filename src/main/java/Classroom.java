@@ -49,27 +49,27 @@ public class Classroom {
         return id + "-" + term;
     }
 
-    public void addStudent(Student student){
-        for (int i = 0; i < 4; i++){
-            participants[i] = student;
-        }
+    public void addStudent (Student student){
+        int i = -1;
+        participants = new Student[5]
+        this.i++;
+        this.participants[this.i] = student;
     }
-
     public String getParticipantsEmail(){
-      String email = "";
-        for(int i = 0; i < participants.length; i++){
-            if(i == (participants.length-1)){
-                email = email.concat(participants[i].getID()).concat("@student.hsrw");
-            }
-            else{
-                email = email.concat(participants[i].getID()).concat("@student.hsrw, ");
-            }                                           
+        String mailList = "";
+        int i;
+        for (i = 0; i <=topElement; i ++) {
+            mailList+=participants[i].getFQUN() +", ";
         }
-
-        return email;
+        mailList= mailList.substring(0,mailList.length() -2);
+        return mailList;
     }
-    
-    public int getTotalPaticipants(){
-        return participants.length;
+    public int getTotalParticipants(){
+        int total = 0;
+        int i;
+        for (i = 0; i <=topElement; i ++) {
+            total++;
+        }
+        return total;
     }
 }
