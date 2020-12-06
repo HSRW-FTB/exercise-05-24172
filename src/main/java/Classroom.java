@@ -49,7 +49,7 @@ public class Classroom {
         return id + "-" + term;
     }
 
-    /*public void addStudent(Student student){
+    public void addStudent(Student student){
         for (int i = 0; i < 4; i++){
             participants[i] = student;
         }
@@ -67,16 +67,6 @@ public class Classroom {
         }
 
         return email;
-    }*/
-    public void addStudent(Student student){
-        participant.add(student);}
-
-    public String getParticipantsEmail(){
-        String emails = "";
-         for (int i=0; i < participants.size();i++){
-            emails = emails + participants.get(i).getFQUN() + ", ";
-        }
-        return emails.substring(0, emails.length() - 2);
     }
     
     public int getTotalPaticipants(){
