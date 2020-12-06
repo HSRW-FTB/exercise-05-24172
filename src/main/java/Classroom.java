@@ -3,7 +3,7 @@ public class Classroom {
     private String id;
     private Course course;
     private Student[] participants;
-    private int index = 0;
+    private int index = -1;
     private String room;
     private String term;
 
