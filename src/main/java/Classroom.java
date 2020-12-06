@@ -3,12 +3,11 @@ public class Classroom {
     private String id;
     private Course course;
     private Student[] participants;
+    private int index = 0;
     private String room;
     private String term;
 
-    private Classroom(){
-        int index = 0;
-    }
+    private Classroom(){}
     public Classroom(Course newCourse, String theRoom){
         course = newCourse;
         room = theRoom;
@@ -54,7 +53,7 @@ public class Classroom {
     public void addStudent (Student student){
         participants = new Student[5];
         this.index++;
-        this.participants[index] = student;
+        this.participants[this.index] = student;
     }
     public String getParticipantsEmail(){
         String mailList = "";
