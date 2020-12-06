@@ -4,8 +4,7 @@ public class BucketOfObjects {
     public BucketOfObjects() {}
 
     public void addObject(GeometricObject obj){
-        for(int i = 0; i < items.length; i++)
-        {
+        for(int i = 0; i < items.length; i++){
             items[i] = obj;
         }
     }
@@ -13,20 +12,38 @@ public class BucketOfObjects {
     public double getTotalArea(){
         double Area = 0;
         for(int i = 0; i < items.length; i++) {
-            return Area = Area + items[i].getArea();
+            Area = Area + items[i].getArea();
        }
-       return 0;
+       return Area;
     }
     
     public double getTotalPerimeter(){
         double Perimeter = 0;
         for(int i = 0; i < items.length; i++){
-            return Perimeter = Perimeter + items[i].getPerimeter();
+            Perimeter = Perimeter + items[i].getPerimeter();
        }
-       return 0;
+       return Perimeter;
     }
 
     public String toString(){
-        return "";
+        String allObjects= "";
+        int i;
+        for (i= 0 ; i <= this.items.length; i++){
+            if (items[i].getClass().equals(Rectangle.class)) {
+                allObjects += "Rectangle";
+            }
+            else if (items[i].getClass().equals(Circle.class))
+                {allObjects += "Circle";
+                }
+            else if (items[i].getClass().equals(Triangle.class))
+            {allObjects += "Triangle";
+            }
+            else
+            {allObjects += "RegularPolygon";
+            }
+            allObjects += ", ";
+        }
+        allObjects = allObjects.substring(0, allObjects.length() -2);
+        return allObjects;
     }
 }
