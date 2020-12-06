@@ -53,13 +53,13 @@ public class Classroom {
         int index = -1;
         participants = new Student[5];
         this.index++;
-        this.participants[this.index] = student;
+        this.participants[index] = student;
     }
     public String getParticipantsEmail(){
         String mailList = "";
         int i;
-        for (i = 0; i <=this.index; i ++) {
-            mailList+=participants[i].getFQUN() +", ";
+        for (i = 0; i <= index; i ++) {
+            mailList += participants[i].getFQUN() +", ";
         }
         mailList= mailList.substring(0,mailList.length() -2);
         return mailList;
@@ -67,7 +67,7 @@ public class Classroom {
     public int getTotalParticipants(){
         int total = 0;
         int i;
-        for (i = 0; i <=this.index; i ++) {
+        for (i = 0; i <= index; i ++) {
             total++;
         }
         return total;
