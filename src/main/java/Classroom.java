@@ -49,45 +49,26 @@ public class Classroom {
         return id + "-" + term;
     }
 
-    public void addStudent(Student student)
-    {
+    public void addStudent(Student student){
         
-        for(int i=0; i<participants.length;i++){
+        for (int i = 0; i < 4; i++){
             
-            if(participants[i]== null ){
-                participants[i]= student;
-                i = participants.length;
-            }
-            }
-        
-    
+            participants[i] = student;
+        }
     }
 
-    public String getParticipantsEmail()
-    {
-      String str= "";
-      String hsrw= "@student.hsrw, ";
-      String hsrwend= "@student.hsrw";
-           
-        int k=0;
-        for(int z=0; z<participants.length; z++){
-                 if(participants[z]!=null) k++;
-
+    public String getParticipantsEmail(){
+      String email = "";
+        for(int i = 0; i < participants.length; i++){
+            if(i == (participants.length-1)){
+                email = email.concat(participants[i].getID()).concat("@student.hsrw");
+            }
+            else{
+                email = email.concat(participants[i].getID()).concat("@student.hsrw, ");
+            }                                           
         }
-        for(int i=0; i<k; i++){
-         if(i==k-1){
-            
-          str= str.concat(participants[i].getID()).concat(hsrwend);
-                                         }
-      else
-      {
-          str= str.concat(participants[i].getID()).concat(hsrw);
-          }
-               
-                                                     }
-      return str;
-                              
 
+        return email;
     }
     
     public int getTotalPaticipants(){
