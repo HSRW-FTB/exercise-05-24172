@@ -2,7 +2,7 @@ import java.util.*;
 public class Classroom {
     private String id;
     private Course course;
-    private Student[] participants;
+    private Student[] participants = new Student[10];
     private int index = -1;
     private String room;
     private String term;
@@ -50,24 +50,25 @@ public class Classroom {
         return id + "-" + term;
     }
 
-    public void addStudent (Student student){
-        participants = new Student[5];
+    public void addStudent(Student newStudent){
         this.index++;
-        this.participants[this.index] = student;
+        this.participants[this.index] = newStudent;
     }
+
     public String getParticipantsEmail(){
         String email = "";
         int i;
         for (i = 0; i <= index; i ++) {
-            email += participants[i].getFQUN() +", ";
+            email += participants[i].getFQUN() + ", ";
         }
-        email= email.substring(0, email.length() -2);
+        email = email.substring(0, email.length()-2);
         return email;
     }
-    public int getTotalParticipants(){
+    
+    public int getTotalPaticipants(){
         int total = 0;
         int i;
-        for (i = 0; i <= index; i ++) {
+        for (i = 0; i <= index; i++) {
             total++;
         }
         return total;
