@@ -21,7 +21,7 @@ public class TestClassroom {
             System.out.println(oop_class.getTerm());
             System.out.println(oop_class.getID());
             System.out.println(oop_class.getParticipantsEmail());
-
+            System.out.println(oop_class.getTotalParticipants());
 
 
         }
