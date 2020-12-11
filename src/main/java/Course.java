@@ -24,7 +24,7 @@ public class Course {
     }
 
     public void setLecturer(Professor newLecturer){
-            lecturer = newLecturer;
+        lecturer = newLecturer;
     }
     public Professor getLecturer(){
         return lecturer;

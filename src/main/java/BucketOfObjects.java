@@ -1,17 +1,17 @@
 public class BucketOfObjects {
-    private GeometricObject[] items;
+    private GeometricObject[] items = new GeometricObject[10];
+    private int index = -1;
 
     public BucketOfObjects() {}
 
     public void addObject(GeometricObject obj){
-        for(int i = 0; i < items.length; i++){
-            items[i] = obj;
-        }
+        index++;
+        this.items[index] = obj;
     }
 
     public double getTotalArea(){
         double Area = 0;
-        for(int i = 0; i < items.length; i++) {
+        for(int i = 0; i < index; i++) {
             Area = Area + items[i].getArea();
        }
        return Area;
@@ -19,16 +19,16 @@ public class BucketOfObjects {
     
     public double getTotalPerimeter(){
         double Perimeter = 0;
-        for(int i = 0; i < items.length; i++){
+        for(int i = 0; i < index; i++){
             Perimeter = Perimeter + items[i].getPerimeter();
        }
        return Perimeter;
     }
 
     public String toString(){
-        String allObjects= "";
+        String allObjects = "";
         int i;
-        for (i= 0 ; i <= this.items.length; i++){
+        for (i = 0 ; i <= this.index; i++){
             if (items[i].getClass().equals(Rectangle.class)) {
                 allObjects += "Rectangle";
             }
@@ -43,7 +43,7 @@ public class BucketOfObjects {
             }
             allObjects += ", ";
         }
-        allObjects = allObjects.substring(0, allObjects.length() -2);
+        allObjects = allObjects.substring(0, allObjects.length()-2);
         return allObjects;
     }
 }
