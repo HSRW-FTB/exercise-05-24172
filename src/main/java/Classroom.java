@@ -65,7 +65,7 @@ public class Classroom {
         return email;
     }
     
-    public int getTotalPaticipants(){
+    public int getTotalParticipants(){
         int total = 0;
         int i;
         for (i = 0; i <= index; i++) {
